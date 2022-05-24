@@ -26,15 +26,14 @@ namespace Whoa\Contracts\Data;
  */
 interface ModelSchemaInfoInterface
 {
-    /** @noinspection PhpTooManyParametersInspection
+    /**
      * @param string $class
      * @param string $tableName
      * @param string $primaryKey
-     * @param array  $attributeTypes
-     * @param array  $attributeLengths
-     * @param array  $rawAttributes
-     * @param array  $virtualAttributes
-     *
+     * @param array $attributeTypes
+     * @param array $attributeLengths
+     * @param array $rawAttributes
+     * @param array $virtualAttributes
      * @return self
      */
     public function registerClass(
@@ -49,44 +48,35 @@ interface ModelSchemaInfoInterface
 
     /**
      * Check if it has information about model class.
-     *
      * @param string $class
-     *
      * @return bool
      */
     public function hasClass(string $class): bool;
 
     /**
      * Get model's table name.
-     *
      * @param string $class
-     *
      * @return string
      */
     public function getTable(string $class): string;
 
     /**
      * Get model's primary key name.
-     *
      * @param string $class
-     *
      * @return string
      */
     public function getPrimaryKey(string $class): string;
 
     /**
      * @param string $class
-     *
      * @return array
      */
     public function getAttributeTypes(string $class): array;
 
     /**
      * Check if model has attribute type.
-     *
      * @param string $class
      * @param string $name
-     *
      * @return bool
      */
     public function hasAttributeType(string $class, string $name): bool;
@@ -94,77 +84,63 @@ interface ModelSchemaInfoInterface
     /**
      * @param string $class
      * @param string $name
-     *
      * @return string
      */
     public function getAttributeType(string $class, string $name): string;
 
     /**
      * Check if model has attribute lengths.
-     *
      * @param string $class
-     *
      * @return array
      */
     public function getAttributeLengths(string $class): array;
 
     /**
      * @param string $class
-     *
      * @return array
      */
     public function getAttributes(string $class): array;
 
     /**
      * @param string $class
-     *
      * @return array
      */
     public function getRawAttributes(string $class): array;
 
     /**
      * @param string $class
-     *
      * @return array
      */
     public function getVirtualAttributes(string $class): array;
 
     /**
      * Check if it has attribute length.
-     *
      * @param string $class
      * @param string $name
-     *
      * @return bool
      */
     public function hasAttributeLength(string $class, string $name): bool;
 
     /**
      * Get attribute length.
-     *
      * @param string $class
      * @param string $name
-     *
      * @return int
      */
     public function getAttributeLength(string $class, string $name): int;
 
     /**
      * Check if model has relationship.
-     *
      * @param string $class
      * @param string $name
-     *
      * @return bool
      */
     public function hasRelationship(string $class, string $name): bool;
 
     /**
      * Get model's relationship type.
-     *
      * @param string $class
      * @param string $name
-     *
      * @return int
      */
     public function getRelationshipType(string $class, string $name): int;
@@ -172,7 +148,6 @@ interface ModelSchemaInfoInterface
     /**
      * @param string $class
      * @param string $name
-     *
      * @return array
      */
     public function getReverseRelationship(string $class, string $name): array;
@@ -180,7 +155,6 @@ interface ModelSchemaInfoInterface
     /**
      * @param string $class
      * @param string $name
-     *
      * @return array
      */
     public function getReversePrimaryKey(string $class, string $name): array;
@@ -188,27 +162,22 @@ interface ModelSchemaInfoInterface
     /**
      * @param string $class
      * @param string $name
-     *
      * @return array
      */
     public function getReverseForeignKey(string $class, string $name): array;
 
     /**
      * Get model class the relationship refers to.
-     *
      * @param string $class
      * @param string $name
-     *
      * @return string
      */
     public function getReverseModelClass(string $class, string $name): string;
 
     /**
      * Get model's attribute corresponding to foreign key relationship.
-     *
      * @param string $class
      * @param string $name
-     *
      * @return string
      */
     public function getForeignKey(string $class, string $name): string;
@@ -216,20 +185,17 @@ interface ModelSchemaInfoInterface
     /**
      * @param string $class
      * @param string $name
-     *
      * @return array
      */
     public function getBelongsToManyRelationship(string $class, string $name): array;
 
     /**
      * Register `belongs to one` relationship.
-     *
      * @param string $class
      * @param string $name
      * @param string $foreignKey
      * @param string $reverseClass
      * @param string $reverseName
-     *
      * @return self
      */
     public function registerBelongsToOneRelationship(
@@ -240,9 +206,8 @@ interface ModelSchemaInfoInterface
         string $reverseName
     ): self;
 
-    /** @noinspection PhpTooManyParametersInspection
+    /**
      * Register `belongs to many` relationship.
-     *
      * @param string $class
      * @param string $name
      * @param string $table
@@ -250,7 +215,6 @@ interface ModelSchemaInfoInterface
      * @param string $reverseForeignKey
      * @param string $reverseClass
      * @param string $reverseName
-     *
      * @return self
      */
     public function registerBelongsToManyRelationship(

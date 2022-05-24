@@ -26,12 +26,12 @@ namespace Whoa\Contracts\Data;
  */
 interface TimestampFields
 {
-    /** Field name */
-    const FIELD_CREATED_AT = 'created_at';
+    /** @var string Field name */
+    public const FIELD_CREATED_AT = 'created_at';
 
-    /** Field name */
-    const FIELD_UPDATED_AT = 'updated_at';
+    /** @var string Field name */
+    public const FIELD_UPDATED_AT = 'updated_at';
 
-    /** Field name */
-    const FIELD_DELETED_AT = 'deleted_at';
+    /** @var string Field name */
+    public const FIELD_DELETED_AT = 'deleted_at';
 }
